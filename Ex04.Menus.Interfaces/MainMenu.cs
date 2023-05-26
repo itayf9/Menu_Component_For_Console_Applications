@@ -8,18 +8,18 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
-        private SimpleMenuItem m_MenuItem;
+        private MenuItemBase m_MenuItem;
 
-        public MainMenu(SimpleMenuItem i_MenuItem)
+        public MainMenu(MenuItemBase i_MenuItem)
         {
             m_MenuItem = i_MenuItem;
         }
 
-        public SimpleMenuItem MenuItem { get { return m_MenuItem; } set { m_MenuItem = value; } }
+        public MenuItemBase MenuItem { get { return m_MenuItem; } set { m_MenuItem = value; } }
 
         public void Show()
         {
-            m_MenuItem.DisplayOrInvokeMenu();
+            m_MenuItem.SelectMenu();
         }
     }
 }

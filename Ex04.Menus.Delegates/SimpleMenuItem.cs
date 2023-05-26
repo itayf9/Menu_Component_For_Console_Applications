@@ -59,7 +59,7 @@ namespace Ex04.Menus.Delegates
 
         private int getUsersChoice()
         {
-            Console.WriteLine("Please choose an option between 0 and {0} : ", m_SubMenuItems.Count);
+            Console.WriteLine("Please choose an option between 0 and {0}: ", m_SubMenuItems.Count);
             
             string userInputAsStr = Console.ReadLine();
             int userInput;

@@ -40,11 +40,26 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceRunnables\CountSpacesRunnable.cs" />
+    <Compile Include="InterfaceRunnables\ShowVersionRunnable.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="InterfaceRunnables\ShowDateRunnable.cs" />
+    <Compile Include="InterfaceRunnables\ShowTimeRunnable.cs" />
+    <Compile Include="Utillity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
+      <Project>{09cdfd82-72d1-4632-9c8d-ca923538bbb0}</Project>
+      <Name>Ex04.Menus.Delegates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
+      <Project>{a42b4c53-161d-45e3-a79a-690e2b667c6b}</Project>
+      <Name>Ex04.Menus.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

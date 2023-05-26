@@ -12,7 +12,7 @@ namespace Ex04.Menus.Interfaces
 
         public ActionMenuItem(string i_MenuTitle)
             : base(i_MenuTitle)
-        {
+        {  
         }
 
         public override void SelectMenu()
@@ -32,6 +32,16 @@ namespace Ex04.Menus.Interfaces
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             PrevMenu.SelectMenu();
+        }
+
+        public void AddMethodToInvoke(IRunnable m_MethodToAdd)
+        {
+            if (m_MethodsToRun == null)
+            {
+                m_MethodsToRun = new List<IRunnable>();
+            }
+
+            m_MethodsToRun.Add(m_MethodToAdd);
         }
     }
 }
