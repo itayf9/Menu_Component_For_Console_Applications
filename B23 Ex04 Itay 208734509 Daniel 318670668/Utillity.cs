@@ -10,12 +10,12 @@ namespace Ex04.Menus.Test
     {
         public static void ShowDate()
         {
-            Console.WriteLine(DateTime.Now.Date.ToString());
+            Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy"));
         }
 
         public static void ShowTime()
         {
-            Console.WriteLine(DateTime.Now.TimeOfDay.ToString());
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
         }
 
         public static void ShowVersion()
@@ -38,7 +38,7 @@ namespace Ex04.Menus.Test
                 }
             }
 
-            Console.Write($"There are {counterOfSpaces} spaces in your sentence.");
+            Console.WriteLine($"There are {counterOfSpaces} spaces in your sentence.");
         }
     }
 }
