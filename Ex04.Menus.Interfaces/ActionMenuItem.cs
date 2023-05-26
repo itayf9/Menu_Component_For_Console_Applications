@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ex04.Menus.Delegates
+namespace Ex04.Menus.Interfaces
 {
     public class ActionMenuItem : MenuItemBase
     {
-        public event Action OnMenuItemChosen;
+        private List<IRunnable> m_MethodsToRun;
 
         public ActionMenuItem(string i_MenuTitle)
             : base(i_MenuTitle)
@@ -13,9 +17,12 @@ namespace Ex04.Menus.Delegates
 
         public override void SelectMenu()
         {
-            if (OnMenuItemChosen != null)
+            if (m_MethodsToRun != null)
             {
-                OnMenuItemChosen.Invoke();
+                foreach (IRunnable methodToRun in m_MethodsToRun)
+                {
+                    methodToRun.Run();
+                }
             }
             else
             {

@@ -42,7 +42,8 @@
   <ItemGroup>
     <Compile Include="ActionMenuItem.cs" />
     <Compile Include="MainMenu.cs" />
-    <Compile Include="MenuItem.cs" />
+    <Compile Include="SimpleMenuItem.cs" />
+    <Compile Include="MenuItemBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />

@@ -1,4 +1,10 @@
-﻿namespace Ex04.Menus.Delegates
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
@@ -13,7 +19,7 @@
 
         public void Show()
         {
-            m_MenuItem.SelectMenu();
+            m_MenuItem.DisplayOrInvokeMenu();
         }
     }
 }
