@@ -4,7 +4,7 @@ namespace Ex04.Menus.Delegates
 {
     public class ActionMenuItem : MenuItemBase
     {
-        public event Action OnMenuItemChosen;
+        public event Action MenuItemSelected;
 
         public ActionMenuItem(string i_MenuTitle)
             : base(i_MenuTitle)
@@ -13,18 +13,23 @@ namespace Ex04.Menus.Delegates
 
         public override void SelectMenu()
         {
-            if (OnMenuItemChosen != null)
-            {
-                OnMenuItemChosen.Invoke();
-            }
-            else
-            {
-                Console.WriteLine("No action was added to this menu option.");
-            }
+            OnSelection();
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             PrevMenu.SelectMenu();
+        }
+
+        protected virtual void OnSelection()
+        {
+            if (MenuItemSelected != null)
+            {
+                MenuItemSelected.Invoke();
+            }
+            else
+            {
+                Console.WriteLine("There is no action in the menu selection.");
+            }
         }
     }
 }

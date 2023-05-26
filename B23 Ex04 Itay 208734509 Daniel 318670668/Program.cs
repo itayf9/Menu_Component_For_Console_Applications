@@ -25,9 +25,9 @@ namespace Ex04.Menus.Test
 
             Delegates.SimpleMenuItem dateTimeSubMenu = new Delegates.SimpleMenuItem("Show Date/Time");
             Delegates.ActionMenuItem showDateAction = new Delegates.ActionMenuItem("Show Date");
-            showDateAction.OnMenuItemChosen += Utillity.ShowDate;
+            showDateAction.MenuItemSelected += Utillity.ShowDate;
             Delegates.ActionMenuItem showTimeAction = new Delegates.ActionMenuItem("Show Time");
-            showTimeAction.OnMenuItemChosen += Utillity.ShowTime;
+            showTimeAction.MenuItemSelected += Utillity.ShowTime;
 
             dateTimeSubMenu.AddSubMenuItem(showDateAction);
             dateTimeSubMenu.AddSubMenuItem(showTimeAction);
@@ -35,9 +35,9 @@ namespace Ex04.Menus.Test
 
             Delegates.SimpleMenuItem versionAndSpacesSubMenu = new Delegates.SimpleMenuItem("Version and Spaces");
             Delegates.ActionMenuItem showVersionAction = new Delegates.ActionMenuItem("Show Version");
-            showVersionAction.OnMenuItemChosen += Utillity.ShowVersion;
+            showVersionAction.MenuItemSelected += Utillity.ShowVersion;
             Delegates.ActionMenuItem countSpacesAction = new Delegates.ActionMenuItem("Count Spaces");
-            countSpacesAction.OnMenuItemChosen += Utillity.CountSpaces;
+            countSpacesAction.MenuItemSelected += Utillity.CountSpaces;
 
             versionAndSpacesSubMenu.AddSubMenuItem(showVersionAction);
             versionAndSpacesSubMenu.AddSubMenuItem(countSpacesAction);
