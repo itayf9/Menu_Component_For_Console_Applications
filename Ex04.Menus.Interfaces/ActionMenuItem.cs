@@ -12,7 +12,7 @@ namespace Ex04.Menus.Interfaces
 
         public ActionMenuItem(string i_MenuTitle)
             : base(i_MenuTitle)
-        {  
+        {
         }
 
         public override void SelectMenu()

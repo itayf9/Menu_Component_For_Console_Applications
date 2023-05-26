@@ -9,7 +9,11 @@
             m_MenuItem = i_MenuItem;
         }
 
-        public MenuItemBase MenuItem { get { return m_MenuItem; } set { m_MenuItem = value; } }
+        public MenuItemBase MenuItem
+        {
+            get { return m_MenuItem; }
+            set { m_MenuItem = value; }
+        }
 
         public void Show()
         {

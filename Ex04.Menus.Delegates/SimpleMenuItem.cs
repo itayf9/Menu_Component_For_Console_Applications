@@ -7,13 +7,14 @@ namespace Ex04.Menus.Delegates
     {
         private readonly int r_ExitOrGoBackIndex = 0;
         private List<MenuItemBase> m_SubMenuItems;
-        
-        public List<MenuItemBase> SubMenu 
-        { 
-            get { return m_SubMenuItems; } 
+
+        public List<MenuItemBase> SubMenu
+        {
+            get { return m_SubMenuItems; }
         }
 
-        public SimpleMenuItem(string i_MenuTitle) : base(i_MenuTitle)
+        public SimpleMenuItem(string i_MenuTitle)
+            : base(i_MenuTitle)
         {
         }
 
@@ -39,9 +40,8 @@ namespace Ex04.Menus.Delegates
             if (m_SubMenuItems == null)
             {
                 m_SubMenuItems = new List<MenuItemBase>();
-                
             }
-            
+
             m_SubMenuItems.Add(i_SubMenuItem);
         }
 
@@ -60,7 +60,7 @@ namespace Ex04.Menus.Delegates
         private int getUsersChoice()
         {
             Console.WriteLine("Please choose an option between 0 and {0}: ", m_SubMenuItems.Count);
-            
+
             string userInputAsStr = Console.ReadLine();
             int userInput;
             bool isValidInput = int.TryParse(userInputAsStr, out userInput);
