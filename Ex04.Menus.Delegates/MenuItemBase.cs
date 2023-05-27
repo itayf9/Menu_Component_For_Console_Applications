@@ -8,8 +8,8 @@ namespace Ex04.Menus.Delegates
 {
     public abstract class MenuItemBase
     {
+        protected MenuItemBase m_PreviousMenu;
         private string m_MenuTitle;
-        protected MenuItemBase m_PrevMenu;
 
         public string MenuTitle
         {
@@ -17,10 +17,10 @@ namespace Ex04.Menus.Delegates
             set { m_MenuTitle = value; }
         }
 
-        public MenuItemBase PrevMenu
+        public MenuItemBase PreviousMenu
         {
-            get { return m_PrevMenu; }
-            set { m_PrevMenu = value; }
+            get { return m_PreviousMenu; }
+            set { m_PreviousMenu = value; }
         }
 
         protected MenuItemBase(string i_MenuTitle)
@@ -28,6 +28,6 @@ namespace Ex04.Menus.Delegates
             m_MenuTitle = i_MenuTitle;
         }
 
-        public abstract void SelectMenu();
+        public abstract void SelectMenuItem();
     }
 }

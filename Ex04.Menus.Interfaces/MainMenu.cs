@@ -23,7 +23,7 @@ namespace Ex04.Menus.Interfaces
 
         public void Show()
         {
-            m_MenuItem.SelectMenu();
+            m_MenuItem.SelectMenuItem();
         }
     }
 }

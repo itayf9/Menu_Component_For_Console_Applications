@@ -15,7 +15,7 @@ namespace Ex04.Menus.Interfaces
         {
         }
 
-        public override void SelectMenu()
+        public override void SelectMenuItem()
         {
             if (m_MethodsToRun != null)
             {
@@ -31,7 +31,7 @@ namespace Ex04.Menus.Interfaces
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            PrevMenu.SelectMenu();
+            PrevMenu.SelectMenuItem();
         }
 
         public void AddMethodToInvoke(IRunnable m_MethodToAdd)

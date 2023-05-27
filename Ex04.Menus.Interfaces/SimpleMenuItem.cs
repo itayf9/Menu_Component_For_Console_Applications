@@ -18,26 +18,27 @@ namespace Ex04.Menus.Interfaces
             get { return m_SubMenuItems; }
         }
 
-        public SimpleMenuItem(string i_MenuTitle) 
+        public SimpleMenuItem(string i_MenuTitle)
             : base(i_MenuTitle)
         {
         }
 
-        public override void SelectMenu()
+        public override void SelectMenuItem()
         {
             string goToPreviousMenuTitle = PrevMenu == null ? sr_ExitMenuText : sr_BackMenuText;
 
             Console.Clear();
             Console.WriteLine(MenuTitle);
-            Console.WriteLine("{0}. {1}", sr_GoToPreviousMenuIndex, goToPreviousMenuTitle);
+            Console.WriteLine("------------------------");
+            Console.WriteLine("{0}. -> {1}", sr_GoToPreviousMenuIndex, goToPreviousMenuTitle);
 
             for (int i = 0; i < m_SubMenuItems.Count; i++)
             {
-                Console.WriteLine(@"{0}. {1}", i + 1, m_SubMenuItems[i].MenuTitle);
+                Console.WriteLine("{0}. -> {1}", i + 1, m_SubMenuItems[i].MenuTitle);
             }
 
             int userChoice = getUsersChoice();
-            invokeChoiceAction(userChoice);
+            invokeUserChoiceAction(userChoice);
         }
 
         public void AddSubMenuItem(MenuItemBase i_SubMenuItem)
@@ -53,21 +54,21 @@ namespace Ex04.Menus.Interfaces
 
         }
 
-        private void invokeChoiceAction(int i_UserChoice)
+        private void invokeUserChoiceAction(int i_UserChoice)
         {
             if (i_UserChoice <= m_SubMenuItems.Count && i_UserChoice > 0)
             {
-                m_SubMenuItems[i_UserChoice - 1].SelectMenu();
+                m_SubMenuItems[i_UserChoice - 1].SelectMenuItem();
             }
             else if (PrevMenu != null)
             {
-                PrevMenu.SelectMenu();
+                PrevMenu.SelectMenuItem();
             }
         }
 
         private int getUsersChoice()
         {
-            Console.WriteLine("Please select an option between 0 and {0} : ", m_SubMenuItems.Count);
+            Console.WriteLine("Please select an option between 0 and {0}: ", m_SubMenuItems.Count);
 
             string userInputAsStr = Console.ReadLine();
             int userInput;
@@ -75,7 +76,7 @@ namespace Ex04.Menus.Interfaces
 
             while (!isValidInput || userInput < 0 || userInput > m_SubMenuItems.Count)
             {
-                Console.WriteLine("Invalid input. Please select an option between 0 and {0} : ", m_SubMenuItems.Count);
+                Console.WriteLine("Invalid input. Please select an option between 0 and {0}: ", m_SubMenuItems.Count);
                 userInputAsStr = Console.ReadLine();
                 isValidInput = int.TryParse(userInputAsStr, out userInput);
             }

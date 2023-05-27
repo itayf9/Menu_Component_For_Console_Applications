@@ -8,8 +8,8 @@ namespace Ex04.Menus.Interfaces
 {
     public abstract class MenuItemBase
     {
-        private string m_MenuTitle;
         protected MenuItemBase m_PrevMenu;
+        private string m_MenuTitle;
 
         public string MenuTitle
         {
@@ -28,6 +28,6 @@ namespace Ex04.Menus.Interfaces
             m_MenuTitle = i_MenuTitle;
         }
 
-        public abstract void SelectMenu();
+        public abstract void SelectMenuItem();
     }
 }

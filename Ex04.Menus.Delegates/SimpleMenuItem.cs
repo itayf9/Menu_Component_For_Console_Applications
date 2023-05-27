@@ -20,17 +20,18 @@ namespace Ex04.Menus.Delegates
         {
         }
 
-        public override void SelectMenu()
+        public override void SelectMenuItem()
         {
-            string goToPreviousMenuTitle = PrevMenu == null ? sr_ExitMenuText : sr_BackMenuText;
+            string goToPreviousMenuTitle = PreviousMenu == null ? sr_ExitMenuText : sr_BackMenuText;
 
             Console.Clear();
             Console.WriteLine(MenuTitle);
-            Console.WriteLine("{0}. {1}", sr_GoToPreviousMenuIndex, goToPreviousMenuTitle);
+            Console.WriteLine("------------------------");
+            Console.WriteLine("{0}. -> {1}", sr_GoToPreviousMenuIndex, goToPreviousMenuTitle);
 
             for (int i = 0; i < m_SubMenuItems.Count; i++)
             {
-                Console.WriteLine(@"{0}. {1}", i + 1, m_SubMenuItems[i].MenuTitle);
+                Console.WriteLine("{0}. -> {1}", i + 1, m_SubMenuItems[i].MenuTitle);
             }
 
             int userChoice = getUsersChoice();
@@ -39,7 +40,7 @@ namespace Ex04.Menus.Delegates
 
         public void AddSubMenuItem(MenuItemBase i_SubMenuItem)
         {
-            i_SubMenuItem.PrevMenu = this;
+            i_SubMenuItem.PreviousMenu = this;
             if (m_SubMenuItems == null)
             {
                 m_SubMenuItems = new List<MenuItemBase>();
@@ -52,11 +53,11 @@ namespace Ex04.Menus.Delegates
         {
             if (i_UserChoice <= m_SubMenuItems.Count && i_UserChoice > 0)
             {
-                m_SubMenuItems[i_UserChoice - 1].SelectMenu();
+                m_SubMenuItems[i_UserChoice - 1].SelectMenuItem();
             }
-            else if (PrevMenu != null)
+            else if (PreviousMenu != null)
             {
-                PrevMenu.SelectMenu();
+                PreviousMenu.SelectMenuItem();
             }
         }
 

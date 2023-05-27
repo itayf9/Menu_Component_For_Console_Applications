@@ -17,7 +17,7 @@
 
         public void Show()
         {
-            m_MenuItem.SelectMenu();
+            m_MenuItem.SelectMenuItem();
         }
     }
 }

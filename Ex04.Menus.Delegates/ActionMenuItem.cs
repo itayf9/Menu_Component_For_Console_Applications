@@ -11,13 +11,13 @@ namespace Ex04.Menus.Delegates
         {
         }
 
-        public override void SelectMenu()
+        public override void SelectMenuItem()
         {
             OnSelection();
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            PrevMenu.SelectMenu();
+            PreviousMenu.SelectMenuItem();
         }
 
         protected virtual void OnSelection()
